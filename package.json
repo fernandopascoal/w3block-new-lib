@@ -1,0 +1,46 @@
+{
+  "name": "w3block-new-lib",
+  "version": "1.0.9",
+  "description": "New SDK W3block",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "yarn clean",
+    "build": "tsc && tailwindcss -i ./src/style.css -o ./dist/style.css --minify",
+    "dev:watch": "tsc --watch"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/lodash": "^4.17.16",
+    "@types/react": "^19.1.2",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.1.6",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "lodash": "^4.17.21",
+    "react-i18next": "^15.5.1",
+    "react-use": "^17.6.0",
+    "rimraf": "^5.0.10",
+    "swiper": "^11.2.6"
+  }
+}
