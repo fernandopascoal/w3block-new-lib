@@ -1,6 +1,6 @@
 {
   "name": "w3block-new-lib",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "New SDK W3block",
   "main": "dist/index.js",
   "files": [
@@ -37,6 +37,8 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
+    "i18next": "^25.0.1",
+    "i18next-browser-languagedetector": "^8.0.5",
     "lodash": "^4.17.21",
     "react-i18next": "^15.5.1",
     "react-use": "^17.6.0",

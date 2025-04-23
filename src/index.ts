@@ -1,4 +1,4 @@
 import './style.css'
 
-export * from './components/Hello'
 export * from './components/Paragraph'
+export * from './components/Banner'
