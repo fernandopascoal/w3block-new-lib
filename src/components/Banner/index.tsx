@@ -1,34 +1,29 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { CSSProperties } from "react";
+import { CSSProperties, lazy } from 'react';
 
-import _ from "lodash";
+import _ from 'lodash';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-
-//import { ImageSDK } from '../../shared/components/ImageSDK';
-/* const ImageSDK = lazy(() =>
-  import('../ImageSDK').then((module) => ({
-    default: module.ImageSDK,
-  }))
-); */
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { useMobilePreferenceDataWhenMobile } from "../../hooks/useMergeMobileData/useMergeMobileData";
-
-import { convertSpacingToCSS } from "../../utils/convertSpacingToCSS";
-import { useDynamicApi } from "../../providers/DynamicApiProvider";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 
-import { BannerData, SpecificBannerInfo } from "../../interfaces/Theme";
-import { useBreakpoints } from "../../hooks/useBreakpoints/useBreakpoints";
-import { breakpointsEnum } from "../../enums/breakpointsEnum";
-import TranslatableComponent from "../TranslatableComponent";
-import { useDynamicString } from "../../hooks/useDynamicString/useDynamicString";
-import { useIsMobile } from "../../hooks/useIsMobile/useIsMobile";
-import { composeUrlCloudinary } from "../../utils/composeUrlCloudinary";
-import { isImage, isVideo } from "../../utils/validators";
+
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { AlignmentEnum, BannerData, SpecificBannerInfo } from '../../interfaces/Theme';
+import { useMobilePreferenceDataWhenMobile } from '../../hooks/useMergeMobileData/useMergeMobileData';
+import { useIsMobile } from '../../hooks/useIsMobile/useIsMobile';
+import TranslatableComponent from '../TranslatableComponent';
+import { convertSpacingToCSS } from '../../utils/convertSpacingToCSS';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { useDynamicApi } from '../../providers/DynamicApiProvider';
+import { useDynamicString } from '../../hooks/useDynamicString/useDynamicString';
+import { useBreakpoints } from '../../hooks/useBreakpoints/useBreakpoints';
+import { breakpointsEnum } from '../../enums/breakpointsEnum';
+import { composeUrlCloudinary } from '../../utils/composeUrlCloudinary';
+import { isImage, isVideo } from '../../utils/validators';
+import { ImageSDK } from '../ImageSDK';
+
 
 export const Banner = ({ data }: { data: BannerData }) => {
   const { styleData, mobileStyleData, id } = data;
@@ -49,18 +44,18 @@ export const Banner = ({ data }: { data: BannerData }) => {
     heightUnity,
   } = mergedStyleData;
   const layoutClass =
-    bannerDisposition === "fullWidth" ? "pw-w-full" : "pw-container";
+    bannerDisposition === 'fullWidth' ? 'pw-w-full' : 'pw-container';
 
   const isMobile = useIsMobile();
 
   const bannerHeight = () => {
     if (height && !heightUnity) {
-      return height + "px";
+      return height + 'px';
     }
     if (height && heightUnity) {
       return height + heightUnity;
     } else {
-      return "60vh";
+      return '60vh';
     }
   };
 
@@ -72,7 +67,7 @@ export const Banner = ({ data }: { data: BannerData }) => {
         style={{
           margin: convertSpacingToCSS(margin),
           height: bannerHeight(),
-          overflow: "hidden",
+          overflow: 'hidden',
         }}
       >
         <Swiper
@@ -90,19 +85,19 @@ export const Banner = ({ data }: { data: BannerData }) => {
           modules={[Navigation, Pagination, Autoplay]}
           style={
             {
-              "--swiper-pagination-color": "#F5F9FF",
-              "--swiper-navigation-color": "#F5F9FF",
-              "--swiper-pagination-bullet-inactive-color": "#F5F9FF4D",
-              height: "100%",
+              '--swiper-pagination-color': '#F5F9FF',
+              '--swiper-navigation-color': '#F5F9FF',
+              '--swiper-pagination-bullet-inactive-color': '#F5F9FF4D',
+              height: '100%',
             } as CSSProperties
           }
         >
-          {banners?.map((banner: any) => (
+          {banners?.map((banner) => (
             <SwiperSlide key={banner.title}>
               <Slide
                 height={height}
                 data={{ ...banner, padding }}
-                ratioClassName={ratios[bannerRatio ?? "default"]}
+                ratioClassName={ratios[bannerRatio ?? 'default']}
               />
             </SwiperSlide>
           ))}
@@ -114,35 +109,35 @@ export const Banner = ({ data }: { data: BannerData }) => {
 
 const Slide = ({
   data,
-}: /*  ratioClassName,
-  height, */
-{
+  ratioClassName,
+  height,
+}: {
   data: SpecificBannerInfo;
   ratioClassName?: string;
   height?: string;
   layoutClass?: string;
 }) => {
   const {
-    /*     titleColor,
+    titleColor,
     subtitleColor,
     backgroundColor,
     buttonColor,
-    buttonTextColor, */
-    /*     textAligment, */
+    buttonTextColor,
+    textAligment,
     buttonLink,
-    /*    overlayColor, */
+    overlayColor,
     backgroundUrl,
     backgroundUrlMobile,
-    /*     title: titleRaw, */
-    /*     padding,
-    overlay, */
-    /*     buttonText, */
+    title: titleRaw,
+    padding,
+    overlay,
+    buttonText,
     actionButton,
-    /*   subtitle: subtitleRaw, */
-    /*     secondaryActionButton, */
-    /*     secondaryButtonText,
-    secondaryButtonLink, */
-    /*     secondaryButtonTextColor,
+    subtitle: subtitleRaw,
+    secondaryActionButton,
+    secondaryButtonText,
+    secondaryButtonLink,
+    secondaryButtonTextColor,
     secondaryButtonColor,
     buttonBorderColor,
     secondaryButtonBorderColor,
@@ -167,21 +162,21 @@ const Slide = ({
     buttonSize,
     secondaryButtonSize,
     titleWidth,
-    imageRounded, */
+    imageRounded,
     imageCompression,
   } = data;
 
   const { isDynamic, datasource } = useDynamicApi();
-  /*   const { text: title } = useDynamicString(titleRaw);
-  const { text: subtitle } = useDynamicString(subtitleRaw); */
+  const { text: title } = useDynamicString(titleRaw);
+  const { text: subtitle } = useDynamicString(subtitleRaw);
   const { text: primaryLink } = useDynamicString(buttonLink);
-  /*   const { text: secondaryLink } = useDynamicString(secondaryButtonLink);
+  const { text: secondaryLink } = useDynamicString(secondaryButtonLink);
   const { text: primaryText } = useDynamicString(buttonText);
   const { text: secondaryText } = useDynamicString(secondaryButtonText);
   const rowAlignmentClass = rowAlignments[textAligment ?? AlignmentEnum.LEFT];
   const columnAlignmentClass =
     columnAlignments[textAligment ?? AlignmentEnum.LEFT];
-  const alignmentTextClass = alignmentsText[textAligment ?? AlignmentEnum.LEFT]; */
+  const alignmentTextClass = alignmentsText[textAligment ?? AlignmentEnum.LEFT];
   const breakpoint = useBreakpoints();
   const bgUrl =
     backgroundUrlMobile &&
@@ -190,23 +185,23 @@ const Slide = ({
       : backgroundUrl;
 
   const bgUrlThreath = composeUrlCloudinary({
-    src: bgUrl?.assetUrl ?? "",
+    src: bgUrl?.assetUrl ?? '',
     InternalProps: {
-      width: imageCompression === "no-compression" ? undefined : 1920,
-      quality: imageCompression ? imageCompression : "best",
+      width: imageCompression === 'no-compression' ? undefined : 1920,
+      quality: imageCompression ? imageCompression : 'best',
     },
   });
-  const bg = isDynamic
-    ? _.get(datasource, bgUrl?.assetUrl ?? "", bgUrlThreath)
-    : bgUrlThreath; /* `${
+  const bg = `${
     overlay && overlayColor
       ? `linear-gradient(${overlayColor},${overlayColor}),`
       : ''
   } url("${
-    
-  }") no-repeat center` */
+    isDynamic
+      ? _.get(datasource, bgUrl?.assetUrl ?? '', bgUrlThreath)
+      : bgUrlThreath
+  }") no-repeat center`;
 
-  /*   const getButtonPadding = (fontSize: string) => {
+  const getButtonPadding = (fontSize: string) => {
     if (fontSize == '12px') {
       return '8px 20px';
     } else if (fontSize == '14px') {
@@ -219,21 +214,14 @@ const Slide = ({
       return '14px 32px';
     }
   };
- */
+
   return (
     <a
       href={
-        actionButton && buttonLink && buttonLink != "" ? primaryLink : undefined
+        actionButton && buttonLink && buttonLink != '' ? primaryLink : undefined
       }
     >
-      <img
-        alt=""
-        src={bg}
-        height={600}
-        width={1900}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1200px"
-      />
-      {/*       <div
+      <div
         style={{
           backgroundSize: 'cover',
           backgroundColor: backgroundColor,
@@ -465,20 +453,20 @@ const Slide = ({
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </a>
   );
 };
 
 const ratios: Record<string, string> = {
-  default: "pw-aspect-[20/9]",
-  "4:1": "pw-aspect-[4/1]",
-  "3:1": "pw-aspect-[3/1]",
-  "16:9": "pw-aspect-video",
-  "20:9": "pw-aspect-[20/9]",
+  default: 'pw-aspect-[20/9]',
+  '4:1': 'pw-aspect-[4/1]',
+  '3:1': 'pw-aspect-[3/1]',
+  '16:9': 'pw-aspect-video',
+  '20:9': 'pw-aspect-[20/9]',
 };
 
-/* const rowAlignments: AlignmentClassNameMap = {
+const rowAlignments: AlignmentClassNameMap = {
   left: 'pw-justify-start',
   right: 'pw-justify-end',
   center: 'pw-justify-center',
@@ -492,11 +480,11 @@ const alignmentsText: AlignmentClassNameMap = {
   left: 'pw-text-left',
   right: 'pw-text-right',
   center: 'pw-text-center',
-}; */
-/* type AlignmentClassNameMap = Record<AlignmentEnum, string>; */
+};
+type AlignmentClassNameMap = Record<AlignmentEnum, string>;
 
 export const guessMediaType = (media: string) => {
-  if (!media) return "no-media";
-  if (isImage(media)) return "image";
-  if (isVideo(media)) return "video";
+  if (!media) return 'no-media';
+  if (isImage(media)) return 'image';
+  if (isVideo(media)) return 'video';
 };
