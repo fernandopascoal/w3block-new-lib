@@ -1,20 +1,11 @@
 import { createContext } from 'react';
 
+import { NextRouter } from 'next/router';
+
 export interface RouterUrlConfig {
   path?: string;
-  query?: Record<string, string>;
-  replace?: boolean;
+  query?: string;
+  replace?: string;
 }
 
-export interface CustomRouter {
-  push: (config: RouterUrlConfig) => void;
-  replace: (config: RouterUrlConfig) => void;
-  reload: () => void;
-  currentPath: string;
-  query: any;
-}
-
-
-
-
-export const PixwayRouterContext = createContext<CustomRouter>({} as CustomRouter);
+export const PixwayRouterContext = createContext<NextRouter>({} as NextRouter);

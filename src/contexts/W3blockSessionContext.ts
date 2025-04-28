@@ -2,7 +2,8 @@ import { createContext } from 'react';
 
 import { SessionContextValue } from 'next-auth/react';
 
-export interface PixwaySessionContextInterface {
+
+export interface W3blockSessionContextInterface {
   token?: string;
   companyId?: string;
   user?: {
@@ -10,7 +11,7 @@ export interface PixwaySessionContextInterface {
   };
 }
 
-export const PixwaySessionContext = createContext<SessionContextValue>({
+export const W3blockSessionContext = createContext<SessionContextValue>({
   data: null,
   status: 'unauthenticated',
 });

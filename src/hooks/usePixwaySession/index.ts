@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { PixwaySessionContext } from '../../contexts/PixwaySessionContext';
+import { W3blockSessionContext } from '../../contexts/W3blockSessionContext';
 
 export const usePixwaySession = () => {
-  return useContext(PixwaySessionContext);
+  return useContext(W3blockSessionContext);
 };

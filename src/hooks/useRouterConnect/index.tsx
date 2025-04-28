@@ -4,7 +4,7 @@ import useRouter from '../useRouter';
 import { useCompanyConfig } from '../useCompanyConfig';
 
 
-export const useRouterConnect = () => {
+export const useRouterConnect = (): any => {
   const router = useRouter();
   const { connectProxyPass } = useCompanyConfig();
   const location = useLocation();
