@@ -33,4 +33,8 @@ export * from './providers/DynamicApiProvider'
 export * from './providers/UiSDKUtmProvider'
 export * from './providers/W3blockApiProvider'
 export * from './adapters/PixwaySDKNextRouterAdapter'
+export * from './contexts/PixwaySessionContext'
+export * from './enums/CredentialProviderName'
+export * from './contexts/W3blockAuthenticationContext'
+export * from './interfaces/IW3blockAuthenticationContext'
 

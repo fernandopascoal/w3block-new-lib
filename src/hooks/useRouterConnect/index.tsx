@@ -23,7 +23,7 @@ export const useRouterConnect = (): any => {
       ) +
       (queryString && queryString != '' ? '?' : '') +
       queryString;
-    router.push({path: url});
+    router.push(url);
   };
   const routerToHref = (path: string) => {
     return removeDoubleSlashesOnUrl((connectProxyPass ?? '') + path);
