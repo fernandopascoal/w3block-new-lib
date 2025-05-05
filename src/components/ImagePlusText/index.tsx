@@ -2,8 +2,6 @@ import { CSSProperties, lazy, useMemo } from 'react';
 
 import _ from 'lodash';
 
-import './ImagePlusText.css';
-
 
 import classNames from 'classnames';
 import { ImagePlusTextData } from '../../interfaces/Theme';

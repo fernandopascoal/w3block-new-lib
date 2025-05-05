@@ -1,22 +1,21 @@
-import { CSSProperties } from 'react';
+import { CSSProperties } from "react";
 
-import {ReactComponent as DiscordIcon} from '../../shared/assets/icons/discord.svg';
-import {ReactComponent as FacebookIcon} from '../../shared/assets/icons/facebook.svg';
-import {ReactComponent as GlobeIcon} from '../../shared/assets/icons/globe.svg';
-import {ReactComponent as InstagramIcon} from '../../shared/assets/icons/instagram.svg';
-import {ReactComponent as LinkedinIcon} from '../../shared/assets/icons/linkedin.svg';
-import {ReactComponent as TelegramIcon} from '../../shared/assets/icons/message.svg';
-import {ReactComponent as TwitterIcon} from '../../shared/assets/icons/twitter.svg';
-import {ReactComponent as WeblockLogo} from '../../shared/assets/icons/w3block_logo_white.svg';
-import {ReactComponent as WhatsappIcon} from '../../shared/assets/icons/whatsapp.svg';
+import { ReactComponent as DiscordIcon } from "../../assets/icons/discord.svg";
+import { ReactComponent as FacebookIcon } from "../../assets/icons/facebook.svg";
+import { ReactComponent as GlobeIcon } from "../../assets/icons/globe.svg";
+import { ReactComponent as InstagramIcon } from "../../assets/icons/instagram.svg";
+import { ReactComponent as LinkedinIcon } from "../../assets/icons/linkedin.svg";
+import { ReactComponent as TelegramIcon } from "../../assets/icons/message.svg";
+import { ReactComponent as TwitterIcon } from "../../assets/icons/twitter.svg";
+import { ReactComponent as WeblockLogo } from "../../assets/icons/w3block_logo_white.svg";
+import { ReactComponent as WhatsappIcon } from "../../assets/icons/whatsapp.svg";
 
-import './Footer.css';
-import { FooterData } from '../../interfaces/Theme';
-import { useThemeConfig } from '../../hooks/useThemeConfig/useThemeConfig';
-import { useMobilePreferenceDataWhenMobile } from '../../hooks/useMergeMobileData/useMergeMobileData';
-import { convertSpacingToCSS } from '../../utils/convertSpacingToCSS';
-import { getI18nString } from '../../hooks/useDynamicString/useDynamicString';
-import { useLocale } from '../../hooks/useLocale';
+import { FooterData } from "../../interfaces/Theme";
+import { useThemeConfig } from "../../hooks/useThemeConfig/useThemeConfig";
+import { useMobilePreferenceDataWhenMobile } from "../../hooks/useMergeMobileData/useMergeMobileData";
+import { convertSpacingToCSS } from "../../utils/convertSpacingToCSS";
+import { getI18nString } from "../../hooks/useDynamicString/useDynamicString";
+import { useLocale } from "../../hooks/useLocale";
 
 type SVG = React.FunctionComponent<
   React.SVGProps<SVGSVGElement> & {
@@ -62,15 +61,15 @@ export const StorefrontFooter = ({ data }: { data: FooterData }) => {
     website: GlobeIcon,
   };
 
-  const names: (keyof FooterData['contentData'])[] = [
-    'twitter',
-    'telegram',
-    'discord',
-    'instagram',
-    'facebook',
-    'linkedin',
-    'whatsapp',
-    'website',
+  const names: (keyof FooterData["contentData"])[] = [
+    "twitter",
+    "telegram",
+    "discord",
+    "instagram",
+    "facebook",
+    "linkedin",
+    "whatsapp",
+    "website",
   ];
 
   const socialLinks = names.map((name) => ({
@@ -101,9 +100,9 @@ export const StorefrontFooter = ({ data }: { data: FooterData }) => {
                   className="footer-menu"
                   style={
                     {
-                      textDecoration: 'none',
-                      '--footer-menu-color': menuLinksColor,
-                      '--footer-menu-hover-color': menuLinksHoverColor,
+                      textDecoration: "none",
+                      "--footer-menu-color": menuLinksColor,
+                      "--footer-menu-hover-color": menuLinksHoverColor,
                     } as CSSProperties
                   }
                 >
@@ -125,7 +124,7 @@ export const StorefrontFooter = ({ data }: { data: FooterData }) => {
           {socialNetworks && (
             <div className="pw-w-full pw-flex pw-flex-wrap pw-gap-2 pw-justify-center pw-pt-4">
               {socialLinks.map((socialLink) => {
-                if (!socialLink.url || socialLink.url == '') return null;
+                if (!socialLink.url || socialLink.url == "") return null;
 
                 const Icon = iconsMap[socialLink.type];
 
@@ -137,9 +136,9 @@ export const StorefrontFooter = ({ data }: { data: FooterData }) => {
                     className="pw-rounded-full pw-grid pw-place-items-center pw-p-2 footer-social-network"
                     style={
                       {
-                        '--footer-social-network-color':
+                        "--footer-social-network-color":
                           socialNetworksIconColor,
-                        '--footer-social-network-hover-color':
+                        "--footer-social-network-hover-color":
                           socialNetworksIconHoverColor,
                       } as CSSProperties
                     }
@@ -163,7 +162,7 @@ export const StorefrontFooter = ({ data }: { data: FooterData }) => {
             rel="noreferrer"
           >
             <p className="pw-text-center pw-text-white pw-font-medium pw-text-[11px] pw-mr-[6px]">
-              {'Powered by'}
+              {"Powered by"}
             </p>
             <WeblockLogo width={56} height={16} />
           </a>
@@ -174,11 +173,11 @@ export const StorefrontFooter = ({ data }: { data: FooterData }) => {
 };
 
 type SocialNetworkType =
-  | 'twitter'
-  | 'telegram'
-  | 'discord'
-  | 'instagram'
-  | 'facebook'
-  | 'linkedin'
-  | 'whatsapp'
-  | 'website';
+  | "twitter"
+  | "telegram"
+  | "discord"
+  | "instagram"
+  | "facebook"
+  | "linkedin"
+  | "whatsapp"
+  | "website";

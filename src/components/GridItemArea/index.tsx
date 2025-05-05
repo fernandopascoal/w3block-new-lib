@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { CSSProperties } from "react";
 
-import "./GridItemArea.css";
 import _ from "lodash";
 import {
   CardTypesEnum,

@@ -6,8 +6,6 @@ import _ from 'lodash';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-
-import './Products.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { AlignmentEnum, CardLayoutDisposition, CardTypesEnum, ProductsData } from '../../interfaces/Theme';
