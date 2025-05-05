@@ -4,8 +4,6 @@ import { CSSProperties, lazy } from 'react';
 import classNames from 'classnames';
 import _ from 'lodash';
 
-import './Card.css';
-
 import { composeUrlCloudinary } from '../../utils/composeUrlCloudinary';
 import { CardTypesEnum, ProductsData } from '../../interfaces/Theme';
 import { useDynamicApi } from '../../providers/DynamicApiProvider';

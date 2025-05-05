@@ -10,7 +10,7 @@ import {
 } from "@headlessui/react";
 import classNames from "classnames";
 
-import { ReactComponent as ArrowDown } from "../../shared/assets/icons/arrowDown.svg";
+import { ReactComponent as ArrowDown } from "../../assets/icons/arrowDown.svg";
 
 interface Props {
   onChange: (value: any) => void;
