@@ -37,4 +37,6 @@ export * from './contexts/PixwaySessionContext'
 export * from './enums/CredentialProviderName'
 export * from './contexts/W3blockAuthenticationContext'
 export * from './interfaces/IW3blockAuthenticationContext'
+export * from './providers/W3blockSDKGeneralConfigProvider'
+export * from './providers/OnboardProvider'
 
