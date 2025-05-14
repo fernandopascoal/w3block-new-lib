@@ -93,7 +93,7 @@ export const NavigationTabsPixwaySDKMobile = ({
     }
   };
 
-  return !session || (tabs && tabs.length > 0) ? (
+  return (!session) || (tabs && tabs.length > 0) ? (
     <div className={` ${classNames?.className}`}>
       {opened ? (
         <CloseIcon
@@ -184,7 +184,7 @@ export const NavigationTabsPixwaySDKMobile = ({
             }
           })}
 
-          {!session && hasLogIn && (
+          {(!session) && hasLogIn && (
             <div className="pw-flex pw-justify-center pw-gap-x-[26px]">
               <PixwayButton
                 onClick={() => router.pushConnect(signInRoute)}

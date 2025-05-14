@@ -15,6 +15,8 @@ export const StorefrontHeader = ({ data }: { data: MainModuleThemeInterface }) =
     mobileStyleData
   );
 
+  console.log(data, 'data in sdk')
+
   const {
     backgroundColor,
     textColor,

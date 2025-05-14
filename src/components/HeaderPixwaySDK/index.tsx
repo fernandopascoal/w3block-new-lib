@@ -1,16 +1,15 @@
-import { lazy, useContext, useEffect, useMemo, useState } from 'react';
+import { lazy, useContext, useEffect, useMemo, useState } from "react";
 
-import classNames from 'classnames';
-import { NavigationTabsPixwaySDKTabs } from '../../interfaces/NavigationTabsPixwaySDKTabs';
-import { ThemeContext } from '../../contexts/ThemeContext';
-import { useRouterConnect } from '../../hooks/useRouterConnect';
-import { useCompanyConfig } from '../../hooks/useCompanyConfig';
-import { NavigationTabsPixwaySDK } from '../NavigationTabsPixwaySDK';
-import { PixwayAppRoutes } from '../../enums/PixwayAppRoutes';
-import TranslatableComponent from '../TranslatableComponent';
-import { LanguageSelector } from '../LanguageSelector';
-
-
+import classNames from "classnames";
+import { NavigationTabsPixwaySDKTabs } from "../../interfaces/NavigationTabsPixwaySDKTabs";
+import { ThemeContext } from "../../contexts/ThemeContext";
+import { useRouterConnect } from "../../hooks/useRouterConnect";
+import { useCompanyConfig } from "../../hooks/useCompanyConfig";
+import { NavigationTabsPixwaySDK } from "../NavigationTabsPixwaySDK";
+import { PixwayAppRoutes } from "../../enums/PixwayAppRoutes";
+import TranslatableComponent from "../TranslatableComponent";
+import { LanguageSelector } from "../LanguageSelector";
+import { AttachWalletProvider } from "../../providers/AttachWalletProvider";
 
 interface HeaderPixwaySDKProps {
   headerClassName?: string;
@@ -49,10 +48,10 @@ const _HeaderPixwaySDK = ({
   openedLogin,
   toggleOpenedLogin,
   bgColor,
-  textColor = 'black',
+  textColor = "black",
   hasSignUp = true,
-  brandText = '',
-  logoSrc = '',
+  brandText = "",
+  logoSrc = "",
   margin,
   padding,
   fontFamily,
@@ -75,12 +74,12 @@ const _HeaderPixwaySDK = ({
         context?.defaultTheme?.configurations?.contentData?.developerPreview
       ) {
         if (
-          query?.utm_campaign === 'm2m' &&
-          query?.testPreview?.includes('true')
+          query?.utm_campaign === "m2m" &&
+          query?.testPreview?.includes("true")
         ) {
           setIsOpen(true);
         }
-      } else if (query?.utm_campaign === 'm2m') {
+      } else if (query?.utm_campaign === "m2m") {
         setIsOpen(true);
       }
     }
@@ -97,12 +96,12 @@ const _HeaderPixwaySDK = ({
         context?.defaultTheme?.configurations?.contentData?.developerPreview
       ) {
         if (
-          query?.testPreview?.includes('true') &&
-          query?.download?.includes('true')
+          query?.testPreview?.includes("true") &&
+          query?.download?.includes("true")
         ) {
           setIsOpen(true);
         }
-      } else if (query?.download?.includes('true')) {
+      } else if (query?.download?.includes("true")) {
         setIsOpen(true);
       }
     }
@@ -141,7 +140,7 @@ const _HeaderPixwaySDK = ({
     ) {
       return (
         <img
-          style={{ height: logoHeight + 'px' }}
+          style={{ height: logoHeight + "px" }}
           src={
             logoSrc ??
             context?.defaultTheme?.header?.styleData?.logoSrc?.assetUrl
@@ -156,7 +155,7 @@ const _HeaderPixwaySDK = ({
       return (
         <div
           className="pw-text-[16px] pw-font-[600] pw-flex pw-full pw-items-center"
-          style={{ color: textColor, height: logoHeight + 'px' }}
+          style={{ color: textColor, height: logoHeight + "px" }}
         >
           <p>
             {brandText ?? context?.defaultTheme?.header?.styleData?.brandName}
@@ -166,7 +165,7 @@ const _HeaderPixwaySDK = ({
     } else {
       return (
         <img
-          style={{ height: logoHeight + 'px' }}
+          style={{ height: logoHeight + "px" }}
           src={logoUrl}
           className="pw-object-contain pw-max-w-[150px]"
         />
@@ -197,33 +196,36 @@ const _HeaderPixwaySDK = ({
   const lang =
     context?.defaultTheme?.configurations?.contentData?.i18nJson?.locales;
 
+  console.log(context, "header");
+
   return context?.defaultTheme || standalone ? (
     <div
       id="sf-header"
       style={{
-        minHeight: '90px',
+        minHeight: "90px",
         backgroundColor: headerBgColor,
         margin,
         fontFamily:
           (fontFamily || context?.defaultTheme?.header?.styleData?.fontFamily
             ? fontFamily ?? context?.defaultTheme?.header?.styleData?.fontFamily
-            : 'Poppins') + ', sans-serif',
+            : "Poppins") + ", sans-serif",
       }}
       className="w-full pw-shadow-md"
     >
+      teste
       <div
         style={{
           backgroundColor: headerBgColor,
           padding: padding ?? context?.defaultTheme?.header?.styleData?.padding,
         }}
         className={classNames(
-          'pw-container pw-mx-auto pw-px-4 sm:pw-px-0',
-          headerClassName ?? ''
+          "pw-container pw-mx-auto pw-px-4 sm:pw-px-0",
+          headerClassName ?? ""
         )}
       >
         <div className="pw-flex pw-justify-between pw-py-5 pw-items-center pw-px-6">
           <div className="pw-flex pw-items-center pw-justify-start pw-gap-x-4 pw-pl-4">
-            <div className="sm:pw-hidden">
+            {/* <div className="sm:pw-hidden">
               <NavigationTabsPixwaySDK
                 tabs={tabsToPass}
                 toogleMenu={toggleTabsMemo}
@@ -245,10 +247,10 @@ const _HeaderPixwaySDK = ({
                 bgSelectionColor={selectionBgColor}
                 textSelectionColor={selectionTextColor}
               />
-            </div>
+            </div> */}
             <a
               href={
-                logoLink && logoLink.trim() != ''
+                logoLink && logoLink.trim() != ""
                   ? logoLink
                   : PixwayAppRoutes.HOME
               }
@@ -257,7 +259,7 @@ const _HeaderPixwaySDK = ({
             </a>
           </div>
           <div className="pw-flex pw-items-center">
-            <div className="pw-order-1 sm:pw-order-1 pw-hidden sm:pw-block">
+             <div className="pw-order-1 sm:pw-order-1 pw-hidden sm:pw-block">
               <NavigationTabsPixwaySDK
                 tabs={tabsToPass}
                 toogleMenu={toggleTabsMemo}
@@ -279,8 +281,8 @@ const _HeaderPixwaySDK = ({
                 bgSelectionColor={bgSelectionColor}
                 textSelectionColor={textSelectionColor}
               />
-            </div>
-           {/*  {hasCart && (
+            </div> 
+            {/*  {hasCart && (
               <CartButton
                 iconColor={
                   textColor ??
@@ -299,9 +301,9 @@ const _HeaderPixwaySDK = ({
                 className="pw-flex pw-items-center pw-gap-2 pw-ml-1 sm:pw-border-l sm:pw-ml-4 pw-order-3 sm:pw-order-3 pw-cursor-pointer"
               >
                 <LanguageSelector
-                  bgColor={bgColor ?? ''}
+                  bgColor={bgColor ?? ""}
                   textColor={textColor}
-                  fontFamily={fontFamily ?? ''}
+                  fontFamily={fontFamily ?? ""}
                 />
               </div>
             ) : null}
@@ -337,9 +339,8 @@ const _HeaderPixwaySDK = ({
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const HeaderPixwaySDK = (props: HeaderPixwaySDKProps) => (
   <TranslatableComponent>
-     <_HeaderPixwaySDK {...props} />
-    {/* <AttachWalletProvider>
-     
-    </AttachWalletProvider> */}
+    <AttachWalletProvider>
+      <_HeaderPixwaySDK {...props} />
+    </AttachWalletProvider>
   </TranslatableComponent>
 );
