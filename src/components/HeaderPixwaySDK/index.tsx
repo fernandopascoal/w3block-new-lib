@@ -198,34 +198,33 @@ const _HeaderPixwaySDK = ({
 
   console.log(context, "header");
 
-  return context?.defaultTheme || standalone ? (
+    return context?.defaultTheme || standalone ? (
     <div
       id="sf-header"
       style={{
-        minHeight: "90px",
+        minHeight: '90px',
         backgroundColor: headerBgColor,
         margin,
         fontFamily:
           (fontFamily || context?.defaultTheme?.header?.styleData?.fontFamily
             ? fontFamily ?? context?.defaultTheme?.header?.styleData?.fontFamily
-            : "Poppins") + ", sans-serif",
+            : 'Poppins') + ', sans-serif',
       }}
       className="w-full pw-shadow-md"
     >
-      teste
       <div
         style={{
           backgroundColor: headerBgColor,
           padding: padding ?? context?.defaultTheme?.header?.styleData?.padding,
         }}
         className={classNames(
-          "pw-container pw-mx-auto pw-px-4 sm:pw-px-0",
-          headerClassName ?? ""
+          'pw-container pw-mx-auto pw-px-4 sm:pw-px-0',
+          headerClassName ?? ''
         )}
       >
         <div className="pw-flex pw-justify-between pw-py-5 pw-items-center pw-px-6">
           <div className="pw-flex pw-items-center pw-justify-start pw-gap-x-4 pw-pl-4">
-            {/* <div className="sm:pw-hidden">
+            <div className="sm:pw-hidden">
               <NavigationTabsPixwaySDK
                 tabs={tabsToPass}
                 toogleMenu={toggleTabsMemo}
@@ -247,10 +246,10 @@ const _HeaderPixwaySDK = ({
                 bgSelectionColor={selectionBgColor}
                 textSelectionColor={selectionTextColor}
               />
-            </div> */}
+            </div>
             <a
               href={
-                logoLink && logoLink.trim() != ""
+                logoLink && logoLink.trim() != ''
                   ? logoLink
                   : PixwayAppRoutes.HOME
               }
@@ -259,7 +258,7 @@ const _HeaderPixwaySDK = ({
             </a>
           </div>
           <div className="pw-flex pw-items-center">
-             <div className="pw-order-1 sm:pw-order-1 pw-hidden sm:pw-block">
+            <div className="pw-order-1 sm:pw-order-1 pw-hidden sm:pw-block">
               <NavigationTabsPixwaySDK
                 tabs={tabsToPass}
                 toogleMenu={toggleTabsMemo}
@@ -281,8 +280,8 @@ const _HeaderPixwaySDK = ({
                 bgSelectionColor={bgSelectionColor}
                 textSelectionColor={textSelectionColor}
               />
-            </div> 
-            {/*  {hasCart && (
+            </div>
+            {/* {hasCart && (
               <CartButton
                 iconColor={
                   textColor ??
@@ -301,9 +300,9 @@ const _HeaderPixwaySDK = ({
                 className="pw-flex pw-items-center pw-gap-2 pw-ml-1 sm:pw-border-l sm:pw-ml-4 pw-order-3 sm:pw-order-3 pw-cursor-pointer"
               >
                 <LanguageSelector
-                  bgColor={bgColor ?? ""}
+                  bgColor={bgColor ?? ''}
                   textColor={textColor}
-                  fontFamily={fontFamily ?? ""}
+                  fontFamily={fontFamily ?? ''}
                 />
               </div>
             ) : null}

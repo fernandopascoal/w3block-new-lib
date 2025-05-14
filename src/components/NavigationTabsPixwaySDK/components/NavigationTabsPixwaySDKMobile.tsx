@@ -9,8 +9,8 @@ import { usePixwaySession } from "../../../hooks/usePixwaySession";
 import { getI18nString } from "../../../hooks/useDynamicString/useDynamicString";
 import { Menu, MenuButton, MenuItem, SubMenu } from "@szhsin/react-menu";
 import { ReactComponent as ChevronRight } from "../../../assets/icons/chevronRightFilled.svg";
-import { ReactComponent as CloseIcon } from "../../../assets/icons/closeIconHeader.svg";
-import { ReactComponent as HamburguerIcon } from "../../../assets/icons/headerHamburger.svg";
+import CloseIcon from "../../../assets/icons/closeIconHeader.svg";
+import HamburguerIcon from "../../../assets/icons/headerHamburger.svg";
 import { PixwayButton } from "../../PixwayButton";
 
 export const NavigationTabsPixwaySDKMobile = ({
@@ -42,9 +42,9 @@ export const NavigationTabsPixwaySDKMobile = ({
   };
 
   const onRenderMenu = (item: any) => {
-    if (item.tabs) {
-      return item.tabs.map((subm: any, idx: any) => {
-        const { text: subName } = getI18nString(subm.name, locale, theme);
+    if (item?.tabs) {
+      return item?.tabs?.map((subm: any, idx: any) => {
+        const { text: subName } = getI18nString(subm?.name, locale, theme);
         return (
           <SubMenu
             menuStyle={{
@@ -93,21 +93,17 @@ export const NavigationTabsPixwaySDKMobile = ({
     }
   };
 
-  return (!session) || (tabs && tabs.length > 0) ? (
+  return (!session || tabs && tabs?.length > 0) ? (
     <div className={` ${classNames?.className}`}>
-      {opened ? (
+     {opened ? (
         <CloseIcon
-          style={{ stroke: textColor }}
-          className="pw-cursor-pointer"
-          onClick={toggleTabsMemo}
+          //style={{ stroke: 'white' }}
+          //className="pw-cursor-pointer"
+          //onClick={toggleTabsMemo}
         />
       ) : (
-        <HamburguerIcon
-          style={{ stroke: textColor }}
-          onClick={toggleTabsMemo}
-          className="pw-cursor-pointer"
-        />
-      )}
+        <img src={HamburguerIcon} alt="" />
+      )} 
       {opened ? (
         <div
           style={{ backgroundColor: bgColor }}
@@ -184,7 +180,7 @@ export const NavigationTabsPixwaySDKMobile = ({
             }
           })}
 
-          {(!session) && hasLogIn && (
+          {(!session && hasLogIn) ? (
             <div className="pw-flex pw-justify-center pw-gap-x-[26px]">
               <PixwayButton
                 onClick={() => router.pushConnect(signInRoute)}
@@ -203,7 +199,7 @@ export const NavigationTabsPixwaySDKMobile = ({
                 </PixwayButton>
               )}
             </div>
-          )}
+          ) : <></>}
         </div>
       ) : null}
     </div>

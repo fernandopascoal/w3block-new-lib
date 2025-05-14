@@ -42,4 +42,5 @@ export * from './providers/OnboardProvider'
 export * from './hooks/useLocale'
 export * from './contexts/ThemeContext'
 export * from './interfaces/IThemeContext'
+export * from './components/TesteSvg'
 

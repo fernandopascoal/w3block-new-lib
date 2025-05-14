@@ -62,7 +62,6 @@ export const NavigationTabsPixwaySDK = ({
 
   return (
     <>
-    chegou aqui
       <div className="pw-hidden sm:pw-block">
         <NavigationTabsPixwaySDKDesktop
           tabs={defaultTabs}
