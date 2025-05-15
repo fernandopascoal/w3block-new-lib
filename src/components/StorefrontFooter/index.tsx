@@ -1,14 +1,14 @@
 import { CSSProperties } from "react";
 
-import { ReactComponent as DiscordIcon } from "../../assets/icons/discord.svg";
-import { ReactComponent as FacebookIcon } from "../../assets/icons/facebook.svg";
-import { ReactComponent as GlobeIcon } from "../../assets/icons/globe.svg";
-import { ReactComponent as InstagramIcon } from "../../assets/icons/instagram.svg";
-import { ReactComponent as LinkedinIcon } from "../../assets/icons/linkedin.svg";
-import { ReactComponent as TelegramIcon } from "../../assets/icons/message.svg";
-import { ReactComponent as TwitterIcon } from "../../assets/icons/twitter.svg";
-import { ReactComponent as WeblockLogo } from "../../assets/icons/w3block_logo_white.svg";
-import { ReactComponent as WhatsappIcon } from "../../assets/icons/whatsapp.svg";
+import DiscordIcon from "../../assets/icons/discord.svg";
+import FacebookIcon from "../../assets/icons/facebook.svg";
+import GlobeIcon from "../../assets/icons/globe.svg";
+import InstagramIcon from "../../assets/icons/instagram.svg";
+import LinkedinIcon from "../../assets/icons/linkedin.svg";
+import TelegramIcon from "../../assets/icons/message.svg";
+import TwitterIcon from "../../assets/icons/twitter.svg";
+import WeblockLogo from "../../assets/icons/w3block_logo_white.svg";
+import WhatsappIcon from "../../assets/icons/whatsapp.svg";
 
 import { FooterData } from "../../interfaces/Theme";
 import { useThemeConfig } from "../../hooks/useThemeConfig/useThemeConfig";
@@ -97,11 +97,11 @@ export const StorefrontFooter = ({ data }: { data: FooterData }) => {
                 <a
                   key={label}
                   href={value}
-                  className="footer-menu"
+                  className='footer-menu'
                   style={
                     {
                       textDecoration: "none",
-                      "--footer-menu-color": menuLinksColor,
+                      color: menuLinksColor,
                       "--footer-menu-hover-color": menuLinksHoverColor,
                     } as CSSProperties
                   }
@@ -164,7 +164,7 @@ export const StorefrontFooter = ({ data }: { data: FooterData }) => {
             <p className="pw-text-center pw-text-white pw-font-medium pw-text-[11px] pw-mr-[6px]">
               {"Powered by"}
             </p>
-            <WeblockLogo width={56} height={16} />
+            <WeblockLogo width={64} height={16} />
           </a>
         </div>
       )}

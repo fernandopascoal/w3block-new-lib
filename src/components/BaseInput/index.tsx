@@ -9,9 +9,9 @@ import ReactInputMask from "react-input-mask";
 
 import classNames from "classnames";
 
-import { ReactComponent as PasswordIconShow } from "../../assets/icons/eyeIcon.svg";
-import { ReactComponent as PasswordIconHide } from "../../assets/icons/eyeIconCrossed.svg";
-import { ReactComponent as SearchIcon } from "../../assets/icons/searchOutlined.svg";
+import PasswordIconShow from "../../assets/icons/eyeIcon.svg";
+import PasswordIconHide from "../../assets/icons/eyeIconCrossed.svg";
+import SearchIcon from "../../assets/icons/searchOutlined.svg";
 import { BaseButton } from "../Buttons";
 
 interface BaseInputTheme {

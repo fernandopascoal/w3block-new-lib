@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useClickAway, useToggle } from "react-use";
 
-import { ReactComponent as ArrowDownIcon } from "../../assets/icons/arrowDown.svg";
+import ArrowDownIcon from "../../assets/icons/arrowDown.svg";
 import {
   AlignmentEnum,
   CategoriesData,

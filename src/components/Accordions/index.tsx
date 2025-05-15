@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { ReactComponent as ArrowDownIcon } from "../../assets/icons/chevronDownOutlined.svg";
+import ArrowDownIcon from "../../assets/icons/chevronDownOutlined.svg";
 import {
   AccordionsData,
   SpecificContentAccordion,

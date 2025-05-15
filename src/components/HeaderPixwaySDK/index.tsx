@@ -196,8 +196,6 @@ const _HeaderPixwaySDK = ({
   const lang =
     context?.defaultTheme?.configurations?.contentData?.i18nJson?.locales;
 
-  console.log(context, "header");
-
     return context?.defaultTheme || standalone ? (
     <div
       id="sf-header"
