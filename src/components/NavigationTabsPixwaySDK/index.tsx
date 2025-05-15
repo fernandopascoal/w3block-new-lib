@@ -58,8 +58,6 @@ export const NavigationTabsPixwaySDK = ({
     } else setOpenedTabs(!openedTabs);
   };
 
-  console.log(tabs, 'tabs')
-
   return (
     <>
       <div className="pw-hidden sm:pw-block">

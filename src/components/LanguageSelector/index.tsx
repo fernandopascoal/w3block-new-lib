@@ -2,7 +2,7 @@
 import { useContext, useMemo, useRef, useState } from "react";
 import { useClickAway, useLocalStorage } from "react-use";
 
-import { ReactComponent as ArrowDown } from "../../assets/icons/arrowDown.svg";
+import ArrowDown from "../../assets/icons/arrowDown.svg";
 
 import useTranslation from "../../hooks/useTranslation";
 import { ThemeContext } from "../../contexts/ThemeContext";

@@ -50,8 +50,6 @@ export const Paragraph = ({ data }: { data: ParagraphData }) => {
   const { text: title } = useDynamicString(titleInput);
   const { text: content } = useDynamicString(textInput);
 
-  console.log('teste rodou')
-
   return (
     <div className="pw-container pw-mx-auto" id={`sf-${id}`}>
       <div
