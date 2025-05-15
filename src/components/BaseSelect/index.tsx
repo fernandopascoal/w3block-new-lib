@@ -5,8 +5,8 @@ import { Combobox, Listbox, Transition } from "@headlessui/react";
 import classNames from "classnames";
 import _ from "lodash";
 
-import { ReactComponent as ArrowDown } from "../../assets/icons/arrowDown.svg";
-import { ReactComponent as CheckBoxIcon } from "../../assets/icons/checkOutlined.svg";
+import ArrowDown from "../../assets/icons/arrowDown.svg";
+import CheckBoxIcon from "../../assets/icons/checkOutlined.svg";
 
 import { BaseInputLayout, BaseInputProps } from "../BaseInput";
 

@@ -1,9 +1,12 @@
+import svgr from 'vite-plugin-svgr';
+
+
 module.exports = {
     module: {
       rules: [
         {
           test: /\.svg$/,
-          use: ['@svgr/webpack', 'url-loader'],
+          use: [svgr(), 'url-loader'],
         },
       ],
     },

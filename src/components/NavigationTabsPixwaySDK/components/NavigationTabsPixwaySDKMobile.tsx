@@ -8,7 +8,7 @@ import { useRouterConnect } from "../../../hooks/useRouterConnect";
 import { usePixwaySession } from "../../../hooks/usePixwaySession";
 import { getI18nString } from "../../../hooks/useDynamicString/useDynamicString";
 import { Menu, MenuButton, MenuItem, SubMenu } from "@szhsin/react-menu";
-import { ReactComponent as ChevronRight } from "../../../assets/icons/chevronRightFilled.svg";
+import ChevronRight from "../../../assets/icons/chevronRightFilled.svg";
 import CloseIcon from "../../../assets/icons/closeIconHeader.svg";
 import HamburguerIcon from "../../../assets/icons/headerHamburger.svg";
 import { PixwayButton } from "../../PixwayButton";
@@ -97,12 +97,16 @@ export const NavigationTabsPixwaySDKMobile = ({
     <div className={` ${classNames?.className}`}>
      {opened ? (
         <CloseIcon
-          //style={{ stroke: 'white' }}
-          //className="pw-cursor-pointer"
-          //onClick={toggleTabsMemo}
+          style={{ stroke: 'white' }}
+          className="pw-cursor-pointer"
+          onClick={toggleTabsMemo}
         />
       ) : (
-        <img src={HamburguerIcon} alt="" />
+        <HamburguerIcon
+          style={{ stroke: 'white' }}
+          onClick={toggleTabsMemo}
+          className="pw-cursor-pointer"
+        />
       )} 
       {opened ? (
         <div

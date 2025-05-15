@@ -82,6 +82,8 @@ export const Products = ({ data }: { data: ProductsData }) => {
   );
   const [translate] = useTranslation();
 
+  console.log(data, 'data in products')
+
   const optionsSorting = [
     {
       label: translate('storefront>products>relevance'),

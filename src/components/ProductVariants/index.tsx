@@ -4,7 +4,7 @@ import { useClickAway } from "react-use";
 
 import { Label, Radio, RadioGroup } from "@headlessui/react";
 
-import { ReactComponent as ArrowDown } from "../../assets/icons/arrowDown.svg";
+import ArrowDown from "../../assets/icons/arrowDown.svg";
 import { Variants } from "../../interfaces/Product";
 
 interface Props {

@@ -11,7 +11,7 @@ import {
   useHover,
   useMenuState,
 } from "@szhsin/react-menu";
-import { ReactComponent as ArrowDown } from "../../../assets/icons/arrowDown.svg";
+import ArrowDown from "../../../assets/icons/arrowDown.svg";
 
 interface SubmenuItemProps {
   item: NavigationTabsPixwaySDKTabs;
