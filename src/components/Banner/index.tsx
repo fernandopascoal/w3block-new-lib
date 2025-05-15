@@ -28,6 +28,8 @@ import { ImageSDK } from '../ImageSDK';
 export const Banner = ({ data }: { data: BannerData }) => {
   const { styleData, mobileStyleData, id } = data;
 
+  console.log("linkado")
+
   const mergedStyleData = useMobilePreferenceDataWhenMobile(
     styleData,
     mobileStyleData
@@ -70,6 +72,7 @@ export const Banner = ({ data }: { data: BannerData }) => {
           overflow: 'hidden',
         }}
       >
+      
         <Swiper
           navigation
           pagination

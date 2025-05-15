@@ -3,10 +3,12 @@ import { UseQueryResult } from 'react-query';
 
 import { AxiosResponse } from 'axios';
 
-import { PixwayPaginatedResponse } from '../../interface/PixwayPaginatedResponse';
+
 import { QueryConfig, usePrivateQuery } from '../usePrivateQuery';
-import { usePublicQuery } from '../usePublicQuery';
+
 import { useRouterConnect } from '../useRouterConnect';
+import { PixwayPaginatedResponse } from '../../interfaces/PixwayPaginatedResponse';
+import { usePublicQuery } from '../usePublicQuery';
 
 export interface PaginatedQueryConfig {
   itemsPerPage?: number;

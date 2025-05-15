@@ -3,18 +3,9 @@ import useTranslation from '../../hooks/useTranslation';
 import { NavigationTabsPixwaySDKProps, NavigationTabsPixwaySDKTabs } from '../../interfaces/NavigationTabsPixwaySDKTabs';
 import { usePixwaySession } from '../../hooks/usePixwaySession';
 import { PixwayAppRoutes } from '../../enums/PixwayAppRoutes';
+import { NavigationTabsPixwaySDKDesktop } from './components/NavigationTabsPixwaySDKDesktop';
+import { NavigationTabsPixwaySDKMobile } from './components/NavigationTabsPixwaySDKMobile';
 
-
-const NavigationTabsPixwaySDKDesktop = lazy(() =>
-  import('./components/NavigationTabsPixwaySDKDesktop').then((mod) => ({
-    default: mod.NavigationTabsPixwaySDKDesktop,
-  }))
-);
-const NavigationTabsPixwaySDKMobile = lazy(() =>
-  import('./components/NavigationTabsPixwaySDKMobile').then((mod) => ({
-    default: mod.NavigationTabsPixwaySDKMobile,
-  }))
-);
 
 
 
@@ -66,6 +57,8 @@ export const NavigationTabsPixwaySDK = ({
       toogleMenu();
     } else setOpenedTabs(!openedTabs);
   };
+
+  console.log(tabs, 'tabs')
 
   return (
     <>
