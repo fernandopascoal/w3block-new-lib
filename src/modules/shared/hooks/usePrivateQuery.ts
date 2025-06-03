@@ -2,6 +2,7 @@
 /* import { useToken } from '../useToken'; */
 
 import { QueryFunction, QueryKey, useQuery, UseQueryOptions } from "@tanstack/react-query";
+import { useToken } from "./useToken";
 
 export type QueryConfig<
   TQueryFnData = unknown,
@@ -21,14 +22,14 @@ export const usePrivateQuery = <
   queryFn: QueryFunction<TQueryFnData, QueryKey>,
   options?: QueryConfig<TQueryFnData, TError, TData>
 ) => {
-/*   const token = useToken();
+  const token = useToken();
   const enabled = Object.keys(options ?? {}).includes('enabled')
     ? options?.enabled && Boolean(token)
-    : Boolean(token); */
+    : Boolean(token); 
 
   return useQuery(
     queryKey,
     queryFn,
-    options ? { ...options} : {} 
+    options ? { ...options, enabled} : {enabled} 
   );
 };

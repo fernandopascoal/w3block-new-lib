@@ -1,6 +1,6 @@
 {
   "name": "w3block-new-lib",
-  "version": "1.0.30",
+  "version": "1.0.32",
   "description": "New SDK W3block",
   "main": "dist/index.js",
   "files": [
@@ -22,7 +22,7 @@
     "clean": "rimraf dist",
     "prebuild": "yarn clean",
     "copy-assets": "copyfiles -u 4 \"src/modules/shared/assets/**/*\" dist/modules/shared/assets",
-    "copy-json": "copyfiles -u 2 \"src/modules/shared/locales/**/*\" dist/modules/shared/locales",
+    "copy-json": "copyfiles -u 4 \"src/modules/shared/locales/**/*\" dist/modules/shared/locales",
     "build": "yarn copy-json && yarn copy-assets && tsc && tailwindcss -i ./src/style.css -o ./dist/style.css --minify",
     "dev:watch": "tsc --watch"
   },
