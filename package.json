@@ -1,6 +1,6 @@
 {
   "name": "w3block-new-lib",
-  "version": "1.0.30",
+  "version": "1.0.32",
   "description": "New SDK W3block",
   "main": "dist/index.js",
   "files": [
